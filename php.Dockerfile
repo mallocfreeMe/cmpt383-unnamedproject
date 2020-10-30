@@ -3,4 +3,4 @@ FROM php:7
 WORKDIR /app
 COPY . .
 
-CMD php front/hello.php
+CMD php processLogin.php

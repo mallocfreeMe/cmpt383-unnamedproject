@@ -1,3 +1,3 @@
 docker-compose up
+<br>
 http://localhost:8100
-mysql://jda68:123@localhost:9906/test_db

@@ -15,7 +15,7 @@ services:
     depends_on:
       - db
     volumes:
-      - ./front/:/var/www/html/
+      - .:/var/www/html/
     ports:
       - "8100:80"
     stdin_open: true
@@ -58,10 +58,10 @@ services:
   #    context: .
   #    dockerfile: java.Dockerfile
 
-  js:
-   build:
-     context: .
-     dockerfile: js.Dockerfile
+  # js:
+  #  build:
+  #    context: .
+  #    dockerfile: js.Dockerfile
 
   #ocaml:
   #  build:

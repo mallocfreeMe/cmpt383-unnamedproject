@@ -10,7 +10,7 @@
     <script src="lib/p5.js"></script>
     <script src="lib/p5.sound.min.js"></script>
     <script src="sketch.js"></script>
-    <!-- <a href="tpl.gohtml">Golang</a> -->
+    <a href="tpl.gohtml">Golang</a>
 </head>
 
 <body>
