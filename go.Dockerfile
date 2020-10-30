@@ -8,4 +8,4 @@ WORKDIR /app
 
 COPY . .
 
-CMD go run hello-world/hello.go
+CMD go run front/main.go

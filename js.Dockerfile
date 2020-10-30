@@ -5,4 +5,4 @@ FROM node:14-buster
 WORKDIR /app
 COPY . .
 
-CMD node hello-world/hello.js
+CMD node front/hello.js
