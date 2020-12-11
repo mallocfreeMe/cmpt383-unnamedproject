@@ -10,7 +10,7 @@ services:
     ports:
       - "9906:3306"
   web:
-    image: php:7.2.2-apache
+    image: php:7.4-apache
     container_name: php_web
     depends_on:
       - db
@@ -20,6 +20,12 @@ services:
       - "8100:80"
     stdin_open: true
     tty: true
+  php74:
+    build:
+      context: .
+    image: php74-ffi
+    volumes:
+      - .:/app
   #rabbitmq:
   #  image: rabbitmq:3
   #  environment:

@@ -97,7 +97,7 @@ function draw() {
     if (currentSpriteTowardsRight) {
       currentSprite = imgSquares[0];
     } else {
-      currentSprite = imgSquares2[5];
+      currentSprite = imgSquares2[6];
     }
     image(currentSprite, posX, posY);
   }

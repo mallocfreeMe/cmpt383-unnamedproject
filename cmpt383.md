@@ -14,6 +14,9 @@ I want to make a simple multiplayer online game. The current plan is players can
 
 I plan to use **RabbitMQ** and **RPC** communication methods. 
 
+Rest call - ajax call over http
+foreign function call
+
 ### 4. Deployment technology: Vagrant VM, or Docker containers.
 
 For right now, I plan to use **Docker containers** for deployment.

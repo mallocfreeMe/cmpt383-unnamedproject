@@ -1,3 +1,9 @@
+<?php
+$myfile = fopen("newfile.txt", "r") or die("Unable to open file!");
+echo fread($myfile,filesize("newfile.txt"));
+fclose($myfile);
+?>
+
 <html lang="en">
 
 <head>
@@ -12,6 +18,7 @@
     <script src="sketch.js"></script>
     <a href="tpl.gohtml">Golang</a>
 </head>
+
 
 <body>
     <?php
