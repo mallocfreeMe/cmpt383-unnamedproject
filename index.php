@@ -59,6 +59,10 @@
             background-color: white;
         }
 
+        .txtHintP {
+            padding-top: 10px;
+        }
+
         .intro {
             padding-bottom: 10px;
         }
@@ -111,10 +115,11 @@
     <section class="registerForm" id="background">
         <h1>Sign up</h1>
         <p class="intro">Please fill this form to create an account.</p>
-        <form name="myForm" action="processRegister.php" id="loginForm" onsubmit="return validateForm()" method="post">
+        <form autocomplete="off" name="myForm" action="processRegister.php" id="loginForm" onsubmit="return validateForm()" method="post">
             <label for="username">Username</label>
-            <input type="text" name="username" id="username">
+            <input type="text" name="username" id="username" onkeyup="showHint(this.value)">
             <br>
+            <p class="txtHintP">Suggestions: <span id="txtHint"></span></p>
             <label for="password">Password</label>
             <input type="password" name="password" id="password">
             <br>
@@ -166,12 +171,15 @@
             document.getElementById("password2").value = "";
         }
 
+        // this code is taken from https://www.w3schools.com/pHP/php_ajax_php.asp
+        // when a user types a character in the input field, a function called "showHint()" is executed.
+        // it creates a XMLHttpReuquest object to create rest call (ajax call) over HTTP
         function showHint(str) {
             if (str.length == 0) {
                 document.getElementById("txtHint").innerHTML = "";
                 return;
             } else {
-                var xmlhttp = new XMLHttpRequest();
+                let xmlhttp = new XMLHttpRequest();
                 xmlhttp.onreadystatechange = function() {
                     if (this.readyState == 4 && this.status == 200) {
                         document.getElementById("txtHint").innerHTML = this.responseText;

@@ -1,9 +1,3 @@
-<?php
-$myfile = fopen("tilemapArray.txt", "r") or die("docker-compose run php74 php generateArray.php");
-echo fread($myfile, filesize("tilemapArray.txt"));
-fclose($myfile);
-?>
-
 <html lang="en">
 
 <head>
@@ -116,7 +110,7 @@ fclose($myfile);
         <h1>Login</h1>
         <p class="intro">Please fill in your credentials to login.</p>
 
-        <form name="myForm" action="processLogin.php" id="loginForm" onsubmit="return validateForm()" method="post">
+        <form autocomplete="off" name="myForm" action="processLogin.php" id="loginForm" onsubmit="return validateForm()" method="post">
             <label for="username">Username</label>
             <input type="text" name="username" id="username">
             <br>
@@ -152,22 +146,6 @@ fclose($myfile);
             } else if (y === "") {
                 alert("password must be filled out.");
                 return false;
-            }
-        }
-
-        function showHint(str) {
-            if (str.length == 0) {
-                document.getElementById("txtHint").innerHTML = "";
-                return;
-            } else {
-                var xmlhttp = new XMLHttpRequest();
-                xmlhttp.onreadystatechange = function() {
-                    if (this.readyState == 4 && this.status == 200) {
-                        document.getElementById("txtHint").innerHTML = this.responseText;
-                    }
-                };
-                xmlhttp.open("GET", "gethint.php?q=" + str, true);
-                xmlhttp.send();
             }
         }
     </script>

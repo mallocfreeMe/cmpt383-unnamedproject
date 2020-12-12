@@ -13,13 +13,10 @@ if ($handler) {
         // find the right match
         if (trim($array["0"]) == $username && trim($array["1"]) == $password) {
             fclose($handler);
-            // pass name to personalize page through url
+            // pass name to game page through url
             $string = "Location: game.php?name=" . $array["0"];
             header($string);
             die();
-        } else {
-            echo "saved: " . $array["1"];
-            break;
         }
     }
     // did not find the right match, go back to log in page
