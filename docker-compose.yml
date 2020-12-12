@@ -49,10 +49,10 @@ services:
   #    context: .
   #    dockerfile: erlang.Dockerfile
 
-  go:
-   build:
-     context: .
-     dockerfile: go.Dockerfile
+  # go:
+  #  build:
+  #    context: .
+  #    dockerfile: go.Dockerfile
 
   #haskell:
   #  build:
@@ -74,10 +74,10 @@ services:
   #    context: .
   #    dockerfile: ocaml.Dockerfile
 
-  php:
-   build:
-     context: .
-     dockerfile: php.Dockerfile
+  # php:
+  #  build:
+  #    context: .
+  #    dockerfile: php.Dockerfile
 
   #python:
   #  build:

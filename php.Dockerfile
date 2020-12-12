@@ -8,4 +8,3 @@ RUN set -e; \
 
 WORKDIR /app
 COPY . .
-CMD php74 php abs.php

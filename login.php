@@ -1,3 +1,9 @@
+<?php
+$myfile = fopen("tilemapArray.txt", "r") or die("docker-compose run php74 php generateArray.php");
+echo fread($myfile, filesize("tilemapArray.txt"));
+fclose($myfile);
+?>
+
 <html lang="en">
 
 <head>
@@ -34,7 +40,6 @@
             padding-top: 20px;
             padding-bottom: 20px;
             font-family: 'Roboto', sans-serif;
-            z-index: 100;
         }
 
         .registerForm h1 {
@@ -56,7 +61,6 @@
             padding-top: 10px;
             padding-bottom: 10px;
             font-size: 20px;
-            background-color: white;
         }
 
         .intro {
@@ -109,22 +113,20 @@
 
 <body>
     <section class="registerForm" id="background">
-        <h1>Sign up</h1>
-        <p class="intro">Please fill this form to create an account.</p>
-        <form name="myForm" action="processRegister.php" id="loginForm" onsubmit="return validateForm()" method="post">
+        <h1>Login</h1>
+        <p class="intro">Please fill in your credentials to login.</p>
+
+        <form name="myForm" action="processLogin.php" id="loginForm" onsubmit="return validateForm()" method="post">
             <label for="username">Username</label>
             <input type="text" name="username" id="username">
             <br>
             <label for="password">Password</label>
             <input type="password" name="password" id="password">
             <br>
-            <label for="password2">Confirm Password</label>
-            <input type="password" name="password2" id="password2">
-            <br>
-            <input type="submit" name="submit" value="Submit" id="submitBtn">
-            <button type="button" id="resetBtn" onclick="resetInput()">Reset</button>
+            <input type="submit" name="submit" value="Login" id="submitBtn">
         </form>
-        <p>Already have an account? <a class="toLogin" href="login.php">Login here</a></p>
+
+        <p>Don't have an account? <a class="toLogin" href="index.php">Sign up now.</a></p>
     </section>
 
     <script>
@@ -143,7 +145,6 @@
         function validateForm() {
             let x = document.forms["myForm"]["username"].value;
             let y = document.forms["myForm"]["password"].value;
-            let z = document.forms["myForm"]["password2"].value;
 
             if (x === "") {
                 alert("username must be filled out.");
@@ -151,19 +152,7 @@
             } else if (y === "") {
                 alert("password must be filled out.");
                 return false;
-            } else if (z === "") {
-                alert("confirm password must be filled out.");
-                return false;
-            } else if (y !== z) {
-                alert("Your two passwords must match.");
-                return false;
             }
-        }
-
-        function resetInput() {
-            document.getElementById("username").value = "";
-            document.getElementById("password").value = "";
-            document.getElementById("password2").value = "";
         }
 
         function showHint(str) {
